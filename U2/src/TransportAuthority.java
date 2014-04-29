@@ -18,14 +18,14 @@ public class TransportAuthority {
 		for(int i = 0; i <= 999; i++){
 			if(licensePlate.equals(licensePlateList[i])) return ownerList[i];
 		}
-		return null;
+		return "Fahrzeughalter nicht gefunden \n";
 	}
 	
 	public static String getAddress(String licensePlate){
 		for(int i = 0; i <= 999; i++){
 			if(licensePlate.equals(licensePlateList[i])) return addressList[i];
 		}
-		return null;
+		return "Adresse nicht gefunden \n";
 	}
 	
 	public static double[] getFees(String licensePlate){
