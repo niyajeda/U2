@@ -30,11 +30,13 @@ public class TransportAuthority
 	public static void registerDelict(String licensPlate, double fee, int points)
 	{
 		int count = getId(licensPlate);
+		int countFee = idFee[count];
 
-		if((count > 0) && (idFee < MAXDL))
+		if((count > 0) && (countFee < MAXDL))
 		{
-			feeList[count][idFee] = Double.toString(fee);
-			pointsList[count][idFee++] = Integer.toString(points);
+			feeList[count][countFee] = Double.toString(fee);
+			pointsList[count][countFee] = Integer.toString(points);
+			idFee[count] = ++countFee;
 			if(TEST)
 				System.out.println("Delikt eingetragen.");
 		} else if(count < 0)
@@ -92,11 +94,10 @@ public class TransportAuthority
 	}
 
 	private static int id = 0;
-	private static int idFee = 0; // als 2.dim array
+	private static int[] idFee = new int[MAX];
 	private static String[] licensePlateList = new String[MAX];
 	private static String[] ownerList = new String[MAX];
 	private static String[] addressList = new String[MAX];
 	private static String[][] feeList = new String[MAX][MAXDL];
 	private static String[][] pointsList = new String[MAX][MAXDL];
-
 }
