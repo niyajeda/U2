@@ -1,5 +1,5 @@
 
-public class act {
+public class Act {
 
 	public static void main(String[] args) {
 		TransportAuthority.registerCar("BN-MM 42", "Max Mustermann", "Musterstrasse 42, 101010 Musterstadt");
