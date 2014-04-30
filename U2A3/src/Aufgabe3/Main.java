@@ -15,15 +15,29 @@ public class Main
 	 */
 	public static void main(String[] args)
 	{
-		TransportAuthority.registerCar("B22", "niklas", "köln");
+		MeterMaid poli = new MeterMaid();
 
-		MeterMaid.checkCar("B22");
+		TransportAuthority.registerCar("B22", "Obama", "Washington");
 
-		MeterMaid.fine();
-		MeterMaid.fine();
-		MeterMaid.fine();
+		poli.checkCar("B22");
 
-		MeterMaid.printTicket();
+		poli.fine();
+		poli.fine();
+		poli.fine();
+		poli.printTicket();
+
+		TransportAuthority.registerCar("B23", "Putin", "Moskau");
+
+		poli.checkCar("B23");
+
+		poli.fine();
+		poli.fine();
+		poli.fine();
+		poli.printTicket();
+
+		poli.checkCar("Fehleingabe");
+		poli.printTicket();
+
 	}
 
 }
